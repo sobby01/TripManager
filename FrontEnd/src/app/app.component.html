@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary flex-column flex-md-row bd-navbar"> 
   <a class="navbar-brand" href="#">Trip Manager</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -20,23 +20,20 @@
       </li>
     </ul>
   </div>
-    <div class="my-2 my-lg-0">
+    <div class="my-2 my-lg-2">
         <div class="btn-group" dropdown>
-            <button id="button-animated" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-                    aria-controls="dropdown-animated">
-              Sign In <span class="caret"></span>
-            </button>
-            <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
+            <i class="fa fa-user fa-2x" dropdownToggle><span class="caret"></span></i>
+            <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu dropdown-menu-right"
                 role="menu" aria-labelledby="button-animated">
-              <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
-              <li role="menuitem"><a class="dropdown-item" href="#">Another action</a>
+              <li role="menuitem"><a class="dropdown-item" 
+                href="javascript:void(0)"
+                click="Login()">Sign In</a></li>
+              <li role="menuitem"><a class="dropdown-item" href="#">My Account</a>
               </li>
-              <li role="menuitem"><a class="dropdown-item" href="#">Something else
-                here</a></li>
+              <li role="menuitem"><a class="dropdown-item" href="#">Log Out</a></li>
             </ul>
           </div>
     </div>
-  
 </nav>
 <div  class="container-fluid">
   <router-outlet></router-outlet>

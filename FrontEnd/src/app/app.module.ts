@@ -35,7 +35,8 @@ import { LoginComponent } from './login/login.component';
     TabsModule,
     BrowserAnimationsModule,
     BsDropdownModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
