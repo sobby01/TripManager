@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    console.log("I am CTOR Users");
+  }
 
   ngOnInit() {
+    console.log("I am oninit Users");
   }
 
 }

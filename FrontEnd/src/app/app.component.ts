@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { LoginComponent } from './login/login.component'
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,9 @@ import { LoginComponent } from './login/login.component'
 export class AppComponent implements OnInit {
   private modalRef: BsModalRef
   constructor(
-    private modalService: BsModalService
-    
+    private modalService: BsModalService,
+    private router: Router,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
@@ -29,5 +31,4 @@ export class AppComponent implements OnInit {
       { initialState })
     );
   }
-
 }

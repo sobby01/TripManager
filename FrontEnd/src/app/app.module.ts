@@ -11,25 +11,25 @@ import { BsDropdownModule, ModalModule, PaginationModule,
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component'
 
-import { UserComponent } from './user/user.component';
-import { TripsComponent } from './trips/trips.component';
 import { ExpenseDetailsComponent } from './expense-details/expense-details.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { EnvironmentUrlService } from './shared/environment-url.service';
+import { UserComponent } from './user/user.component';
+import { TripsComponent } from './trips/trips.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UserComponent,
-    TripsComponent,
     ExpenseDetailsComponent,
     LoginComponent,
     RegisterComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserComponent,
+    TripsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +44,7 @@ import { EnvironmentUrlService } from './shared/environment-url.service';
     ModalModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    NgxDatatableModule
+    NgxDatatableModule,
   ],
   entryComponents: [LoginComponent, RegisterComponent],
   providers: [EnvironmentUrlService],
