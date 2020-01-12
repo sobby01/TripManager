@@ -17,6 +17,8 @@ import { ExpenseDetailsComponent } from './expense-details/expense-details.compo
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { EnvironmentUrlService } from './shared/environment-url.service';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +47,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     NgxDatatableModule
   ],
   entryComponents: [LoginComponent, RegisterComponent],
-  providers: [],
+  providers: [EnvironmentUrlService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
