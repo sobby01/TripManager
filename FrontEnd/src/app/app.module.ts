@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BsDropdownModule, ModalModule, PaginationModule, 
@@ -14,6 +15,8 @@ import { UserComponent } from './user/user.component';
 import { TripsComponent } from './trips/trips.component';
 import { ExpenseDetailsComponent } from './expense-details/expense-details.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   declarations: [
@@ -22,22 +25,26 @@ import { LoginComponent } from './login/login.component';
     UserComponent,
     TripsComponent,
     ExpenseDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-   
-    ModalModule,
     PaginationModule,
     DatepickerModule,
     TabsModule,
     BrowserAnimationsModule,
     BsDropdownModule,
     BsDropdownModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    NgxDatatableModule
   ],
+  entryComponents: [LoginComponent, RegisterComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

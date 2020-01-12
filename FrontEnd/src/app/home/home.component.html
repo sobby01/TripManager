@@ -1,1 +1,44 @@
-<p>home works!</p>
+<div >
+
+<ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
+  [rowHeight]="50" [scrollbarV]="true" [sorts]="[{prop: 'name', dir: 'desc'}]">
+  <ngx-datatable-column name="Trip Manager">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{row.TripManager}}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Trip Destination">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{row.TripDestination}}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="No Of People">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{row.NoOfPeople}}
+    </ng-template>
+  </ngx-datatable-column>
+    
+  <ngx-datatable-column name="date">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{row.date}}
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="Total">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{row.Total}}
+    </ng-template>
+  </ngx-datatable-column>
+    
+  <ngx-datatable-column name="Actions">
+      <ng-template #dataTableCell let-item="item">
+            <span style="color: rgb(232, 0, 0)">
+            <a href="javascript:void(0);" (click)="getData(item)" data-toggle="modal" data-target="#add-edit-Modal">Edit</a>
+            </span>
+            <span style="color: rgb(232, 0, 0)">
+            <a href="javascript:void(0);" (click)="delData(item)">Delete</a>
+            </span>
+      </ng-template>
+    </ngx-datatable-column>
+</ngx-datatable>
+</div>

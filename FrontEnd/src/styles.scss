@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+.approve-task-modal{
+    max-width: 740px;
+  }
+  .approve-task-modal .modal-body{
+    padding: 37px 56px 50px 54px;
+  }
+  .approve-task-modal h4{
+    line-height: 22px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: normal;
+    color: #505659;
+    margin-bottom: 31px;
+  }
+  .mrk-def-modal p.at-lable{
+    line-height: 22px;
+    font-size: 13px;
+    margin-bottom: 0;
+    color: #505659;
+  }
+  .approve-task-modal .modal-header .close {
+    right: 30px;
+    top: 26px;
+  }
