@@ -32,6 +32,21 @@
           </div>
     </div>
 </nav>
+
+<!-- breadcrumb -->
+<div class="col" style="margin-top: 20px;">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" 
+      *ngFor="let item of breadcrumbList; let i = index"
+      [class.active]="i===breadcrumbList.length-1">
+      <a [routerLink]="item.path" *ngIf="i!==breadcrumbList.length-1">
+        {{ item.name }}
+      </a>
+      <span *ngIf="i===breadcrumbList.length-1">{{ item.name }}</span>
+    </li>
+  </ol>
+</div>
+
 <div  class="container-fluid" style="margin-top: 20px">
   <router-outlet></router-outlet>
 </div>
