@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../_models/user-model'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RepositoryService } from '../../shared/repository.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-user',
@@ -11,7 +13,10 @@ export class AddUserComponent implements OnInit {
   submitted = false;
   userForm: FormGroup;
   constructor(
+    private repositoryService: RepositoryService,
     private formBuilder: FormBuilder,
+    private location: Location
+   
   ) {
 
     console.log('insideadd user');
@@ -33,6 +38,12 @@ export class AddUserComponent implements OnInit {
 
   onSubmit() 
   {
+    this.repositoryService.create('api/User/Add',this.model ).subscribe(
+      data => {
+        console.log('User created.')
+        this.location
+      }
+    )
      this.submitted = true;
   }
 
