@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
 import { TripsComponent } from './trips/trips.component';
 import { ExpenseDetailsComponent } from './expense-details/expense-details.component';
 
@@ -18,10 +17,10 @@ import { ExpenseDetailsComponent } from './expense-details/expense-details.compo
 
 
 const routes: Routes =[
-    {path: '', component: HomeComponent}, 
-    {path: 'users', component: UserComponent},
+    {path: '', component: HomeComponent},
     {path: 'trips', component: TripsComponent},
     {path: 'expensedetails', component: ExpenseDetailsComponent},
+    { path: 'users', loadChildren: './user/user.module#UserModule' },
   ];
 
 @NgModule({

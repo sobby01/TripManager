@@ -1,0 +1,81 @@
+<div class="container">
+    <div [hidden]="submitted">
+      <h1>Add User</h1>
+      <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+        <div class="form-group">
+          <label for="Name">Name</label>
+          <input type="text" class="form-control" id="Name"
+                 required
+                 [(ngModel)]="model.Name" name="Name"
+                 #name="ngModel">
+          <div [hidden]="name.valid || name.pristine"
+               class="alert alert-danger">
+            Name is required
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="FirstName">First Name</label>
+            <input type="text" class="form-control" id="FirstName"
+                   required
+                   [(ngModel)]="model.FirstName" name="FirstName"
+                   #name="ngModel">
+            <div [hidden]="FirstName.valid || FirstName.pristine"
+                 class="alert alert-danger">
+              First Name is required
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="LastName">Last Name</label>
+            <input type="text" class="form-control" id="LastName"
+                   required
+                   [(ngModel)]="model.LastName" name="LastName"
+                   #name="ngModel">
+            <div [hidden]="LastName.valid || LastName.pristine"
+                 class="alert alert-danger">
+              Last Name is required
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Mobile">Mobile No.</label>
+            <input type="text" class="form-control" id="Mobile"
+                   required
+                   [(ngModel)]="model.Mobile" name="Mobile"
+                   #name="ngModel">
+            <div [hidden]="Mobile.valid || Mobile.pristine"
+                 class="alert alert-danger">
+                 Mobile Number is required
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="text" class="form-control" id="Email"
+                   required
+                   [(ngModel)]="model.Email" name="Email"
+                   #name="ngModel">
+            <div [hidden]="Email.valid || Email.pristine"
+                 class="alert alert-danger">
+                 Email is required
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Address">Address</label>
+            <input type="text" class="form-control" id="Address"
+                   required
+                   [(ngModel)]="model.Address" name="Address"
+                   #name="ngModel">
+            <div [hidden]="Address.valid || Address.pristine"
+                 class="alert alert-danger">
+                 Address is required
+            </div>
+        </div>
+  
+        <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+        <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">Clear</button>
+      </form>
+    </div>
+</div>

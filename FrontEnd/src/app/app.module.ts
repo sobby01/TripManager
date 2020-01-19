@@ -16,7 +16,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { EnvironmentUrlService } from './shared/environment-url.service';
-import { UserComponent } from './user/user.component';
 import { TripsComponent } from './trips/trips.component';
 
 
@@ -28,7 +27,6 @@ import { TripsComponent } from './trips/trips.component';
     LoginComponent,
     RegisterComponent,
     RegisterComponent,
-    UserComponent,
     TripsComponent
   ],
   imports: [
