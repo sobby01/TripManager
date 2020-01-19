@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserModel } from '../_models/user-model'
-import { FormsModule }   from '@angular/forms';
+import { Hero } from '../_models/user-model'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-user',
@@ -9,14 +9,27 @@ import { FormsModule }   from '@angular/forms';
 })
 export class AddUserComponent implements OnInit {
   submitted = false;
-  model = {} as UserModel;
-  constructor() {
+  userForm: FormGroup;
+  constructor(
+    private formBuilder: FormBuilder,
+  ) {
 
     console.log('insideadd user');
    }
 
   ngOnInit() {
+    this.userForm = this.formBuilder.group({
+      Name: ['', Validators.required],
+      FirstName: ['', Validators.required],
+      LastName: ['', Validators.required],
+      Email: ['', Validators.required],
+      Mobile: ['', Validators.required],
+      Address: ['', Validators.required]
+  });
   }
+  model = new Hero('sasingh','Saurabh','Singh','8968488112','saurabhjnumca@gmail.com','d102 Chandigarh');
+   // TODO: Remove this when we're done
+   get diagnostic() { return JSON.stringify(this.model); }
 
   onSubmit() 
   {
@@ -24,7 +37,7 @@ export class AddUserComponent implements OnInit {
   }
 
   newHero() {
-    this.model = new UserModel('','','','','','');
+    this.model = new Hero('','','','','','');
   }
 
   showFormControls(form: any) {

@@ -1,7 +1,4 @@
-import { Injectable } from '@angular/core';
-import {Adapter} from '../../shared/adapter';
-
-export class UserModel{
+export class Hero{
     constructor(
         public Name : string,
         public FirstName : string,
@@ -11,15 +8,5 @@ export class UserModel{
         public Address : string
     ){
 
-    }
-}
-
-@Injectable({
-    providedIn: 'root'
-})
-
-export class UserModelAdapter implements Adapter<UserModel> {
-    adapt(item: any): UserModel {
-        return new UserModel(item.Name, item.firstName, item.lastName, item.Email, item.Mobile, item.Address);
     }
 }
